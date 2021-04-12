@@ -35,14 +35,19 @@ class RandomContainer extends Component {
 
     render(){
         return (
-            <EmployeeTable
-               image={this.state.result.picture.thumbnail}
-               name={this.state.result.name}
-               phone={this.state.result.phone}
-               email={this.state.result.email}
-               dob={this.state.result.dob.date}
-             />
-        )
+            <div>
+                <SearchBar />
+
+                <EmployeeTable
+                  image={this.state.result.picture.thumbnail}
+                  name={this.state.result.name}
+                  phone={this.state.result.phone}
+                  email={this.state.result.email}
+                  dob={this.state.result.dob.date}
+                />
+            </div>
+            
+        );
     }
 
 }

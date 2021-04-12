@@ -1,3 +1,4 @@
+import { PROPERTY_TYPES } from "@babel/types";
 import React from "react";
 
 
@@ -14,7 +15,15 @@ function EmployeeTable(props) {
                 </tr>                
             </thead>
             <tbody>
-
+                {props.result.map(results => (
+                    <tr key={results.id}>
+                        <td>{results.image}</td>
+                        <td>{results.name}</td>
+                        <td>{results.phone}</td>
+                        <td>{results.email}</td>
+                        <td>{results.dob}</td>
+                    </tr>
+                ))}
             </tbody>
         </table>
 
