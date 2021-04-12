@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import PageHeader from "./PageHeader";
 import SearchBar from "./SearchBar";
-import API from "../utils/API";
 import EmployeeTable from "./EmployeeTable";
+import API from "../utils/API";
 
 class RandomContainer extends Component {
     state = {
-        result: {},
+        results: {},
         search: ""
     };
 
@@ -16,7 +15,7 @@ class RandomContainer extends Component {
 
     searchUsers = query => {
         API.search(query)
-        .then(res => this.setState(({ result: res.data.results })))
+        .then(res => this.setState(({ results: res.data.results })))
         .catch(err => console.log(err))
     }
 
@@ -39,11 +38,11 @@ class RandomContainer extends Component {
                 <SearchBar />
 
                 <EmployeeTable
-                  image={this.state.result.picture.thumbnail}
-                  name={this.state.result.name}
-                  phone={this.state.result.phone}
-                  email={this.state.result.email}
-                  dob={this.state.result.dob.date}
+                  image={this.state.results.picture.thumbnail}
+                  name={this.state.results.name}
+                  phone={this.state.results.phone}
+                  email={this.state.results.email}
+                  dob={this.state.results.dob.date}
                 />
             </div>
             
