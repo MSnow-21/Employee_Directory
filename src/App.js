@@ -1,11 +1,13 @@
 import React from "react";
-import RandomContainer from "./components/RandomContainer";
+import RandomContainer from "./pages/RandomContainer";
+
 
 
 function App() {
   return (
     <wrapper>
-      <RandomContainer/>
+      <RandomContainer />
+
     </wrapper>
   );
 }
