@@ -26,10 +26,12 @@ class RandomContainer extends Component {
         event.preventDefault();
         API.getRandomUser(this.state.search)
           .then(res => {
+              console.log(res)
               if (res.data.status === "error"){
                   throw new Error(res.data.message);
-                }
-                this.setState({ results: res.data.message, error: "" });
+               } else {
+                this.setState({ results: res.data.results, error: "" });
+               }
            })
         .catch(err => this.setState({ error: err.message }));
     };
@@ -37,7 +39,6 @@ class RandomContainer extends Component {
     render(){
         return (
             <div>
-                <wrapper>
                     <Header />
                     <SearchBar
                       handleFormSubmit={this.handleFormSubmit}
@@ -45,7 +46,7 @@ class RandomContainer extends Component {
                       user={this.state.user}
                     />
                     <EmployeeTable results={this.state.results} />
-                </wrapper>              
+      
             </div>            
         );
     }
