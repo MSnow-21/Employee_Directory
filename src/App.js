@@ -5,10 +5,8 @@ import RandomContainer from "./pages/RandomContainer";
 
 function App() {
   return (
-    <wrapper>
       <RandomContainer />
 
-    </wrapper>
   );
 }
 

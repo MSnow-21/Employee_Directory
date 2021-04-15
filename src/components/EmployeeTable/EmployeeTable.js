@@ -5,7 +5,7 @@ import TableRows from "../TableRows/TableRows";
 
 function EmployeeTable(props) {
     return (
-        <table className="table">
+        <table className="table table-sortable">
             <thead>
                 <tr>
                     <th scope="col-md-2" data-column="image">Image</th>
