@@ -34,7 +34,6 @@ class RandomContainer extends Component {
 
         const userRandomArray = this.state.results;
 
-
         // const randomUserArray = this.state.results;
         // console.log(randomUserArray)
 
@@ -43,17 +42,6 @@ class RandomContainer extends Component {
 
         this.setState({results: userNameArray});
 
-
-        // API.getRandomUser(this.state.search)
-        //   .then(res => {
-        //       console.log(res)
-        //       if (res.data.status === "error"){
-        //           throw new Error(res.data.message);
-        //        } else {
-        //         this.setState({ results: res.data.results, error: "" });
-        //        }
-        //    })
-        // .catch(err => this.setState({ error: err.message }));
     };
 
     // Building a functon to sort table by Name
@@ -62,10 +50,27 @@ class RandomContainer extends Component {
         event.preventDefault();
         console.log(event);
 
+        const nameArray = this.state.results
+        console.log(nameArray)
+        
+        nameArray.sort((a,b) => {
+            const nameOne = a.name.first.toLowerCase();
+            const nameTwo = b.name.first.toLowerCase();
+            console.log(nameOne);
+            console.log(nameTwo);
+            if (nameOne < nameTwo){
+                return -1;
+            }
+
+            if (nameOne > nameTwo) {
+                return 1;
+            }
+            return 0;      
+
+        });
+        this.setState({results: nameArray});
+
     }
-
-
-
 
     render(){
         return (
