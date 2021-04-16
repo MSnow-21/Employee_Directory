@@ -56,7 +56,14 @@ class RandomContainer extends Component {
         // .catch(err => this.setState({ error: err.message }));
     };
 
-    // Building functon to sort table
+    // Building a functon to sort table by Name
+
+    handleNameSubmit = event => {
+        event.preventDefault();
+        console.log(event);
+
+    }
+
 
 
 
@@ -69,7 +76,9 @@ class RandomContainer extends Component {
                       handleInputChange={this.handleInputChange}
                       user={this.state.user}
                     />
-                    <EmployeeTable results={this.state.results} />
+                    <EmployeeTable
+                       handleNameSubmit={this.handleNameSubmit}
+                       results={this.state.results} />
       
             </div>            
         );
